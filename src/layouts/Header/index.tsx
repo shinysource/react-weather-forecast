@@ -1,5 +1,7 @@
 import React from "react";
 
+import "./header.scss";
+
 const Header: React.FC = (): JSX.Element => {
   return (
     <nav className="navbar navbar-expand-sm shadow">

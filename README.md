@@ -2,6 +2,8 @@
 
 This is a React web app which can display a five day weather forecast.
 
+![](./public/preview.jpg)
+
 ## Available Scripts
 
 In the project directory, you can run:
@@ -27,15 +29,12 @@ It correctly bundles React in production mode and optimizes the build for the be
 The build is minified and the filenames include the hashes.\
 Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
 ## Technical Stacks
 
 - React 18.2
 - TypeScript
 - Bootstrap 5
-- Sass
 
 ## Deployed App
 
-You can see the [weather-forecast]()
+You can see the [weather-forecast](https://weather-forecast-test-app.netlify.app/)

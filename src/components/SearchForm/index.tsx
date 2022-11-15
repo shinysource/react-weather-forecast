@@ -40,7 +40,7 @@ const SearchForm: React.FC<ISearchFormProps> = ({
   return (
     <AsyncPaginate
       placeholder="Search For City"
-      debounceTimeout={600}
+      debounceTimeout={1000}
       value={search}
       onChange={handleOnChange}
       loadOptions={loadOptions}

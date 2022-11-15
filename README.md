@@ -2,7 +2,7 @@
 
 This is a React web app which can display a five day weather forecast.
 
-![](./public/preview.jpg)
+![](./public/assets/preview.gif)
 
 ## Available Scripts
 

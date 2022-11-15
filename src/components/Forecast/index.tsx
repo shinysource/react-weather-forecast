@@ -36,7 +36,7 @@ const Forecast = ({ data }: any) => {
                   <img
                     alt="weather"
                     className="icon-small"
-                    src={`icons/${item.weather[0].icon}.png`}
+                    src={`assets/icons/${item.weather[0].icon}.png`}
                   />
                   <label className="days">{forecastDays[index]}</label>
                   <label className="description">

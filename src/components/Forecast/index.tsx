@@ -20,7 +20,7 @@ const Forecast = ({ data }: any) => {
 
   return (
     <>
-      <div className="accordion mt-4" id="accordionPanelsStayOpenExample">
+      <div className="accordion mt-4" id="forecast">
         {data.list.splice(0, 5).map((item: any, index: number) => (
           <div className="accordion-item" key={index}>
             <h2 className="accordion-header" id={`header-${index}`}>

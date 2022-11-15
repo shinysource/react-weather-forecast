@@ -4,6 +4,7 @@ import { WEATHER_API_URL, WEATHER_API_KEY } from "../../config";
 import SearchForm from "../../components/SearchForm";
 import CurrentWeather from "../../components/CurrentWeather";
 import Forecast from "../../components/Forecast";
+import "./main.scss";
 
 const Main: React.FC = (): JSX.Element => {
   const [currentWeather, setcurrentWeather] = useState(null);

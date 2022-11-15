@@ -1,0 +1,16 @@
+{
+  "city": "California",
+  "sys": {
+    "country": "US"
+  },
+  "weather": [{ "description": "few clouds", "icon": "02d" }],
+  "main": {
+    "temp": 29.08,
+    "feels_like": 27.44,
+    "humidity": 16,
+    "pressure": 1015
+  },
+  "wind": {
+    "speed": 7.23
+  }
+}

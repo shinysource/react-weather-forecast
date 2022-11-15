@@ -77,7 +77,7 @@ const Forecast = ({ data }: any) => {
                   </div>
                   <div className="daily-details-grid-item">
                     <label>Feels Like:</label>
-                    <label>{Math.round(item.main.feels_like)}°C</label>
+                    <label>{item.main.feels_like}°C</label>
                   </div>
                   <div className="daily-details-grid-item">
                     <label>Max Temperature:</label>

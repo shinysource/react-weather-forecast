@@ -1,5 +1,6 @@
 // @ts-nocheck
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 import { AsyncPaginate } from "react-select-async-paginate";
 
 import { GEO_API_URL, geoApiOptions } from "../../config";
@@ -11,15 +12,15 @@ const SearchForm: React.FC<ISearchFormProps> = ({
 
   const loadOptions = async (inputValue: string) => {
     try {
-      const response = await fetch(
+      let response = await fetch(
         `${GEO_API_URL}/cities?minPopulation=1000000&namePrefix=${inputValue}`,
         geoApiOptions
       );
 
-      const response_1 = await response.json();
+      response = (await response.json()) || [];
 
       return {
-        options: response_1.data.map((city: ICity) => {
+        options: response.data.map((city: ICity) => {
           return {
             value: `${city.latitude} ${city.longitude}`,
             label: `${city.name} ${city.countryCode}`,
@@ -27,7 +28,7 @@ const SearchForm: React.FC<ISearchFormProps> = ({
         }),
       };
     } catch (err) {
-      return console.error(err);
+      toast("Error happens", { type: "error" });
     }
   };
 
@@ -39,7 +40,7 @@ const SearchForm: React.FC<ISearchFormProps> = ({
   return (
     <AsyncPaginate
       placeholder="Search For City"
-      debounceTimeout={400}
+      debounceTimeout={600}
       value={search}
       onChange={handleOnChange}
       loadOptions={loadOptions}

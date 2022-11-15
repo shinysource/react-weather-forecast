@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import { toast } from "react-toastify";
 
 import { WEATHER_API_URL, WEATHER_API_KEY } from "../../config";
 import SearchForm from "../../components/SearchForm";
@@ -29,7 +30,7 @@ const Main: React.FC = (): JSX.Element => {
         setcurrentWeather({ city: searchData.label, ...weatherResponse });
         setForeCast({ city: searchData.label, ...forecastResponse });
       })
-      .catch((err) => console.log(err));
+      .catch((err) => toast("Error happens", { type: "error" }));
   };
 
   return (

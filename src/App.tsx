@@ -1,29 +1,29 @@
 import React, { createContext } from "react";
-import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
+import {
+  BrowserRouter as Router,
+  Route,
+  Routes,
+  Navigate,
+} from "react-router-dom";
 import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import Layout from "./layouts";
 import Main from "./pages/Main";
-
-export const WeatherContext = createContext({
-  weatherState: [],
-  setWeatherState: () => {},
-});
+import NotFound from "./pages/NotFound";
 
 const App: React.FC = (): JSX.Element => {
   return (
-    <WeatherContext.Provider
-      value={{ weatherState: [], setWeatherState: () => [] }}
-    >
-      <Router>
-        <Layout>
-          <Routes>
-            <Route path="/" element={<Main />} />
-          </Routes>
-        </Layout>
-        <ToastContainer />
-      </Router>
-    </WeatherContext.Provider>
+    <Router>
+      <Layout>
+        <Routes>
+          <Route path="/" element={<Main />} />
+          <Route path="/not-found" element={<NotFound />} />
+          <Route path="*" element={<Navigate to="/not-found" />} />
+        </Routes>
+      </Layout>
+      <ToastContainer />
+    </Router>
   );
 };
 
